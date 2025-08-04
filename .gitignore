@@ -1,0 +1,11 @@
+# 忽略源码和构建缓存
+node_modules/
+dist/
+src/
+scripts/
+tool/
+*.ts
+*.tsx
+
+# 允许保留构建产物
+!dist-release/**

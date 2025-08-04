@@ -1,0 +1,38 @@
+{
+  "name": "test-backend",
+  "version": "0.1.0",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev:auth": "NODE_OPTIONS='--max-old-space-size=2048' ts-node src/servers/auth/index.ts",
+    "dev:proxy": "node -e \"setTimeout(() => require('ts-node').register() && require('./src/servers/proxy/index.ts'), 10000)\"",
+    "dev:game": "ts-node src/servers/game/index.ts",
+    "dev:chat": "ts-node src/servers/chat/index.ts",
+    "dev": "ts-node src/servers/devEntry.ts",
+    "build": "tsrpc-cli build",
+    "doc": "tsrpc-cli doc",
+    "test": "mocha test/**/*.test.ts",
+    "proto": "tsrpc-cli proto",
+    "sync": "tsrpc-cli sync",
+    "api": "tsrpc-cli api",
+    "release": "bash scripts/release.sh"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/mocha": "^8.2.3",
+    "@types/node": "^15.14.9",
+    "concurrently": "^9.2.0",
+    "cross-env": "^10.0.0",
+    "mocha": "^9.2.2",
+    "onchange": "^7.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "ioredis": "^5.6.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.18.0",
+    "tsrpc": "^3.4.19",
+    "tsrpc-cli": "^2.4.5"
+  }
+}
